@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>📖 TypeTheBible - Practice Typing with Scripture</title>
+  <link href="style.css" rel="stylesheet" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📖</text></svg>">
+</head>
+
+<body>
+  <!-- Home Page -->
+  <div id="home-page" class="home-page">
+    <div class="home-content">
+      <h1 class="home-title">📖 TypeTheBible</h1>
+      <p class="home-tagline">Improve your typing while reading Scripture</p>
+
+      <div class="home-description">
+        <p>Practice typing with the entire Bible at your fingertips. Choose any book, chapter, or verse and improve your typing speed and accuracy while immersing yourself in God's Word.</p>
+
+        <div class="home-features">
+          <div class="feature-item">
+            <span class="feature-icon">⌨️</span>
+            <span>Real-time WPM & accuracy tracking</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📚</span>
+            <span>Complete Bible - Old & New Testament</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">📊</span>
+            <span>Track your progress chapter by chapter</span>
+          </div>
+          <div class="feature-item">
+            <span class="feature-icon">🎯</span>
+            <span>Accurate error tracking</span>
+          </div>
+        </div>
+
+        <button id="start-typing-btn" class="cta-button">Start Typing Practice</button>
+      </div>
+
+      <div class="extension-promo">
+        <h3>🌐 Check out our Browser Extension</h3>
+        <p><strong>BibleVerse Gate</strong> - Block distracting sites with a mindful Bible verse typing challenge. Stay focused and grounded in faith before you enter.</p>
+        <a href="https://bibleversegate.com" target="_blank" class="extension-link">Visit BibleVerse Gate →</a>
+      </div>
+
+      <div class="contact-section">
+        <h3>💬 Contact & Support</h3>
+        <p>Have questions, suggestions, or feedback? We'd love to hear from you!</p>
+        <form action="https://formspree.io/f/mzzldkaz" method="POST" class="contact-form">
+          <div class="form-group">
+            <label for="email">Your email:</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Your message:</label>
+            <textarea id="message" name="message" required placeholder="Share your thoughts, report issues, or request features..." rows="5"></textarea>
+          </div>
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
+      </div>
+
+      <footer class="home-footer">
+        <p>typethebible.xyz - Made with faith and code ✝️</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- Typing App -->
+  <div id="typing-app" class="app-container" style="display: none;">
+    <!-- Sidebar for Books -->
+    <div class="sidebar">
+      <button id="back-home-btn" class="back-home-btn">← Home</button>
+      <h2>Bible Books</h2>
+      <div class="testament-toggle">
+        <button id="toggle-ot">Old Testament</button>
+        <button id="toggle-nt">New Testament</button>
+      </div>
+      <div id="books-list" class="books-list"></div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Chapter Navigation -->
+      <div class="chapter-nav">
+        <h3 id="current-book">Select a Book</h3>
+        <div id="chapters-list" class="chapters-list"></div>
+      </div>
+
+      <!-- Typing Area -->
+      <div class="container">
+        <h1 id="heading">Select a book and chapter to begin</h1>
+        <div id="typing-box" class="typing-box"></div>
+        <input id="hidden-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" />
+        <button onclick="retakeTest()" id="retake-test" class="retake-test">
+          Retake Chapter
+        </button>
+
+        <!-- Progress Bar -->
+        <div id="progress-container" class="progress-container">
+          <div class="progress-bar">
+            <div id="progress-fill" class="progress-fill"></div>
+          </div>
+          <div id="progress-text" class="progress-text">0%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="bible-data.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
